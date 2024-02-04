@@ -81,9 +81,9 @@
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <title>Pranay's 3D Projects</title>
 </head>
 
@@ -92,7 +92,7 @@
   <div class="flex flex-wrap justify-center">
     <!-- Repeat for other projects... -->
     <div class="project-card md:w-1/3 w-full group transition-all pt-20 duration-500"
-      onclick="redirectToProjectPage('https://arey-pranay.github.io/Elm-3D/')">
+      onclick="redirectToProjectPage2('https://arey-pranay.github.io/Elm-3D/')">
       <!-- <h2 class="text-2xl font-bold mb-4"></h2> -->
       <div class="group group-hover:scale-90 ">
         <img src="./images/moveBack.png" alt="Project 1" class="project-image  group-hover:hidden ">
@@ -169,9 +169,21 @@
       <!-- Add more social icons as needed -->
     </div>
     <script>
-      if (window.innerWidth < "700px")
-        alert("open the projects on Laptop Screens Please")
-      function redirectToProjectPage(pageUrl) {
+
+      var mq = window.matchMedia("(max-width: 570px)");
+      if (mq.matches) {
+        // window width is at less than 570px
+        function redirectToProjectPage(pageUrl) {
+        }
+      }
+      else {
+        // window width is greater than 570px
+        function redirectToProjectPage(pageUrl) {
+          window.location.href = pageUrl;
+        }
+
+      }
+      function redirectToProjectPage2(pageUrl) {
         window.location.href = pageUrl;
       }
     </script>

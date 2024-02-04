@@ -92,7 +92,7 @@
     Elm
   </h1>
   <p class="mt-8 hidden md:block">Hover to see magic, Click to experience</p>
-  <p class="mt-8 block md:hidden">Please open on a Laptop/Desktop</p>
+  <p class="mt-8 block md:hidden">Tap an image to see magic <br> Switch to laptop to experience it</p>
 
   <div class="flex flex-wrap justify-center py-12">
     <!-- Repeat the following project card section for each project -->
@@ -149,7 +149,7 @@
 
     <!-- Repeat for other projects... -->
     <div class="project-card md:w-1/3 w-full p-12 group transition-all duration-500"
-      onclick="redirectToProjectPage('page2.html')">
+      onclick="redirectToProjectPage2('page2.html')">
       <!-- <h2 class="text-2xl font-bold mb-4">View More</h2> -->
       <div class="group group-hover:scale-90 ">
         <img src="./images/wantMore.png" alt="Project 1" class="project-image  group-hover:hidden ">
@@ -175,9 +175,23 @@
     <!-- Add more social icons as needed -->
   </div>
   <script>
-    function redirectToProjectPage(pageUrl) {
+    var mq = window.matchMedia("(max-width: 570px)");
+    if (mq.matches) {
+      // window width is at less than 570px
+      function redirectToProjectPage(pageUrl) {
+
+      }
+    }
+    else {
+      // window width is greater than 570px
+      function redirectToProjectPage(pageUrl) {
+        window.location.href = pageUrl;
+      }
+    }
+    function redirectToProjectPage2(pageUrl) {
       window.location.href = pageUrl;
     }
+
   </script>
 
 </body>
